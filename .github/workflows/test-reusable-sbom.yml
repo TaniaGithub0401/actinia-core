@@ -7,9 +7,12 @@ on:
 
 jobs:
   sbom-scan:
+    permissions:
+      contents: read
+      security-events: write
+
     uses: TaniaGithub0401/github-workflows/.github/workflows/sbom-vulnerability-scan.yml@add-reusable-sbom-vulnerability-workflow
     with:
       dockerfile: docker/actinia-core-alpine/Dockerfile
       image: localbuild/testimage:latest
       fail-build: false
-    
