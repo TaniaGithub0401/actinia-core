@@ -15,15 +15,19 @@ name: SBOM Vulnerability Scan
 
 on:
   push:
-    branches: [ "main" ]
-
+    branches:
+      - main
+      - test-openvex-workflow
+  workflow_dispatch:
 jobs:
   sbom-scan:
     permissions:
       contents: read
       security-events: write
 
-    uses: mundialis/github-workflows/.github/workflows/sbom-vulnerability-scan.yml@main
+    uses: TaniaGithub0401/github-workflows/.github/workflows/sbom-vulnerability-scan.yml@add-openvex-cra-reporting
     with:
       dockerfile: docker/actinia-core-alpine/Dockerfile
       fail-build: false
+      generate-openvex: true
+      product-id: "pkg:generic/actinia-core@test"
