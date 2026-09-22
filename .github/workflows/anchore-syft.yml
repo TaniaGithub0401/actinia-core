@@ -15,7 +15,9 @@ name: SBOM Vulnerability Scan
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+      - add-csaf-email-notifications
 
   workflow_dispatch:
 
@@ -25,7 +27,7 @@ jobs:
       contents: read
       security-events: write
 
-    uses: mundialis/github-workflows/.github/workflows/sbom-vulnerability-scan.yml@main
+    uses: TaniaGithub0401/github-workflows/.github/workflows/sbom-vulnerability-scan.yml@add-csaf-email-notifications
 
     with:
       dockerfile: docker/actinia-core-alpine/Dockerfile
