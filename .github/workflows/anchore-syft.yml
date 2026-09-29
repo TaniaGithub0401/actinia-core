@@ -37,8 +37,8 @@ jobs:
       dependency-track-project-name: actinia-core
       dependency-track-project-version: latest
       email-notification: true
-      email-to: tguerrerobautista@mundialis.de
+      email-address: ${{ vars.CYBERSECURITY_EMAIL }}
 
     secrets:
       dependency-track-api-key: ${{ secrets.DEPENDENCY_TRACK_API_KEY }}
-      smtp-password: ${{ secrets.SMTP_PASSWORD }}
+      smtp-password: ${{ secrets.CYBERSECURITY_EMAIL_APP_PASSWORD }}
