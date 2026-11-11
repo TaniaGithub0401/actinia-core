@@ -1,8 +1,10 @@
 
 name: Test Third-Party Licenses
-
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - test-third-party-licenses
 
 jobs:
   generate-third-party-licenses:
