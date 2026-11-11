@@ -1,15 +1,13 @@
-name: Generate Third-Party Licenses
+
+name: Test Third-Party Licenses
 
 on:
-  release:
-    types: [published]
+  workflow_dispatch:
 
 jobs:
   generate-third-party-licenses:
     permissions:
       contents: write
-    uses: mundialis/github-workflows/.github/workflows/third-party-licenses.yml@main
+    uses: TaniaGithub0401/github-workflows/.github/workflows/third-party-licenses.yml@refactor-third-party-licenses-scripts
     with:
       dockerfile: docker/actinia-core-alpine/Dockerfile
-      # requirements: requirements.txt
-      # pyproject: pyproject.toml
