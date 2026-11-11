@@ -9,6 +9,9 @@ on:
 
 jobs:
   lint:
+    permissions:
+      contents: read
+      statuses: write
     uses: TaniaGithub0401/github-workflows/.github/workflows/linting.yml@refactor-third-party-licenses-scripts
     with:
       pylint-version: ''
