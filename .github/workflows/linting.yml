@@ -1,16 +1,15 @@
-name: Linting and code quality check
+
+name: Test Linting Workflow
 
 on:
   push:
     branches:
-      - main
-      - develop
-  pull_request:
+      - test-third-party-licenses
+  workflow_dispatch:
 
 jobs:
   lint:
-    uses: mundialis/github-workflows/.github/workflows/linting.yml@1.6.0
+    uses: TaniaGithub0401/github-workflows/.github/workflows/linting.yml@refactor-third-party-licenses-scripts
     with:
-      # set pylint-version to empty string to skip the pylint workflow
       pylint-version: ''
       BASH_SEVERITY: 'warning'
